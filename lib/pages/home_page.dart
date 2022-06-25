@@ -154,19 +154,30 @@ class HomePage extends StatelessWidget {
               "Las mejores selecciones de hoy",
               style: TextStyle(color: Colors.white, fontSize: 20.0),
             ),
-
+            divider20,
             Container(
-              height: 300,
+              height: 360,
               child: Swiper(
+                viewportFraction: 0.9,
+                scale: 0.6,
                 itemBuilder: (BuildContext context, int index) {
-                  return Image.network(
-                    "https://images.pexels.com/photos/699466/pexels-photo-699466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                    fit: BoxFit.cover,
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                          "https://images.pexels.com/photos/12139755/pexels-photo-12139755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                        ),
+                      ),
+                    ),
                   );
                 },
-                itemCount: 3,
-                itemWidth: 200,
+                itemCount: 10,
+                itemWidth: 240,
                 layout: SwiperLayout.STACK,
+                autoplay: true,
+
               ),
             ),
             divider40,

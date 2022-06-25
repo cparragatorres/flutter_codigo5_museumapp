@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_museumapp/helpers/data/data_dummy.dart';
+import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 
@@ -10,7 +11,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     double width = MediaQuery.of(context).size.width;
 
     return SingleChildScrollView(
@@ -166,9 +166,9 @@ class HomePage extends StatelessWidget {
                 itemCount: imagesDummy.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
+
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12.0),
-                      color: Colors.blue,
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: NetworkImage(
@@ -176,17 +176,60 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    child: Stack(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.center,
+                                colors: [
+                                  kBrandPrimaryColor.withOpacity(0.9),
+                                  kBrandPrimaryColor.withOpacity(0.1),
+                                ]
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text(
+                                "Lorem ipsum dolor sit amet",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              divider6,
+                              Text(
+                                "Lorem ipsum dolor sit amet Lorem  ipsum dolor sit amet",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   );
                 },
 
                 itemWidth: width * 0.7,
                 layout: SwiperLayout.STACK,
                 autoplay: true,
-                controller: SwiperController(
-
-                ),
+                controller: SwiperController(),
               ),
             ),
+            divider40,
             divider40,
           ],
         ),

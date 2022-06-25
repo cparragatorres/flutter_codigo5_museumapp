@@ -52,15 +52,29 @@ class HomePage extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 200,
+          height: 180,
           child: PageView(
+            controller: PageController(
+              viewportFraction: 0.45,
+              initialPage: 0,
+            ),
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
+            padEnds: false,
+            pageSnapping: true,
             onPageChanged: (int value) {
               print(value);
             },
-
             children: [
+              Container(
+                color: Colors.red,
+              ),
+              Container(
+                color: Colors.purple,
+              ),
+              Container(
+                color: Colors.green,
+              ),
               Container(
                 color: Colors.red,
               ),

@@ -24,7 +24,7 @@ class _InitPageState extends State<InitPage> {
       appBar: AppBar(
         backgroundColor: kBrandPrimaryColor,
         title: const Text(
-          "MuseumApp ",
+          "MuseumApp",
           style: TextStyle(
             fontWeight: FontWeight.w600,
           ),

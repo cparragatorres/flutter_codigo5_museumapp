@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_museumapp/pages/home_page.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -11,7 +12,7 @@ class _InitPageState extends State<InitPage> {
   int _currentIndex = 0;
 
   List<Widget> _pages = [
-    Text("Page 1"),
+    HomePage(),
     Text("Page 2"),
     Text("Page 3"),
     Text("Page 4"),

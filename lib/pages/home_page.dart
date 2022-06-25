@@ -246,8 +246,9 @@ class HomePage extends StatelessWidget {
               ),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
+                const Text(
                   "El festival cultural",
                   style: TextStyle(
                     fontSize: 22.0,
@@ -255,7 +256,7 @@ class HomePage extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Text(
+                const Text(
                   "Encabezando hoy...",
                   style: TextStyle(
                     fontSize: 16.0,
@@ -264,7 +265,17 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Container(
-
+                  height: 220,
+                  margin: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 26.0),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.0),
+                      image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/El_nacimiento_de_Venus%2C_por_Sandro_Botticelli.jpg/1200px-El_nacimiento_de_Venus%2C_por_Sandro_Botticelli.jpg",
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

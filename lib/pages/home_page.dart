@@ -10,6 +10,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    double width = MediaQuery.of(context).size.width;
+
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -154,30 +157,34 @@ class HomePage extends StatelessWidget {
               "Las mejores selecciones de hoy",
               style: TextStyle(color: Colors.white, fontSize: 20.0),
             ),
-            divider20,
-            Container(
-              height: 360,
+            divider30,
+            SizedBox(
+              height: 400,
               child: Swiper(
-                viewportFraction: 0.9,
-                scale: 0.6,
+                // viewportFraction: 0.9,
+                // scale: 0.6,
+                itemCount: imagesDummy.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.0),
                       color: Colors.blue,
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: NetworkImage(
-                          "https://images.pexels.com/photos/12139755/pexels-photo-12139755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                          imagesDummy[index],
                         ),
                       ),
                     ),
                   );
                 },
-                itemCount: 10,
-                itemWidth: 240,
+
+                itemWidth: width * 0.7,
                 layout: SwiperLayout.STACK,
                 autoplay: true,
+                controller: SwiperController(
 
+                ),
               ),
             ),
             divider40,

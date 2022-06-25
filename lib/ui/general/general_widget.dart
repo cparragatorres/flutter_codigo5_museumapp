@@ -15,3 +15,11 @@ const SizedBox divider30 = SizedBox(
 const SizedBox divider40 = SizedBox(
   height: 40,
 );
+
+
+const SizedBox dividerWidth6 = SizedBox(
+  width: 6.0,
+);
+const SizedBox dividerWidth12 = SizedBox(
+  width: 12.0,
+);

@@ -77,7 +77,13 @@ class HomePage extends StatelessWidget {
           ),
           divider12,
           Container(
+            padding:
+                const EdgeInsets.symmetric(vertical: 22.0, horizontal: 14.0),
             alignment: Alignment.center,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.0),
+              color: Colors.white.withOpacity(0.06),
+            ),
             child: Column(
               children: [
                 Text(
@@ -97,6 +103,41 @@ class HomePage extends StatelessWidget {
                     fontSize: 15.0,
                     fontWeight: FontWeight.w500,
                   ),
+                ),
+                divider12,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 22.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6.0),
+                          side: const BorderSide(
+                            width: 1.2,
+                            color: Colors.white10,
+                          ),
+                        ),
+                      ),
+                      onPressed: () {},
+                      child: Text("No, Gracias"),
+                    ),
+                    dividerWidth12,
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 22.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6.0),
+                          side: const BorderSide(
+                            width: 1.2,
+                            color: Colors.white10,
+                          ),
+                        ),
+                      ),
+                      onPressed: () {},
+                      child: Text("Suscribirme"),
+                    ),
+                  ],
                 ),
               ],
             ),

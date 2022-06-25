@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_museumapp/helpers/data/data_dummy.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
 
 import '../ui/widgets/item_slider_1_widget.dart';
@@ -28,24 +29,21 @@ class HomePage extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: [
-                ItemSlider1Widget(
-                  image:
-                      "https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                ),
-                ItemSlider1Widget(
-                  image:
-                      "https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                ),
-                ItemSlider1Widget(
-                  image:
-                      "https://images.pexels.com/photos/1145720/pexels-photo-1145720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                ),
-                ItemSlider1Widget(
-                  image:
-                      "https://images.pexels.com/photos/354939/pexels-photo-354939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                ),
-              ],
+                children: imagesDummy
+                    .map((e) => ItemSlider1Widget(image: e))
+                    .toList()),
+          ),
+          divider6,
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: Colors.blueAccent
+            ),
+            onPressed: () {},
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: const Text(
+                "Explora +3000 colecciones",
+              ),
             ),
           ),
         ],
@@ -53,4 +51,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-

@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -73,6 +73,32 @@ class HomePage extends StatelessWidget {
               child: const Text(
                 "Explora +3000 colecciones",
               ),
+            ),
+          ),
+          divider12,
+          Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: [
+                Text(
+                  "Culture Box",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 28.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                divider12,
+                Text(
+                  "Suscribete para recibir noticias, historias y actualizaciones semanalmente.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

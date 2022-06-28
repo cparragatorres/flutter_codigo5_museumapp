@@ -328,6 +328,12 @@ class HomePage extends StatelessWidget {
             ),
           ),
           divider30,
+          divider30,
+          const Text(
+            "Las mejores selecciones de hoy",
+            style: TextStyle(color: Colors.white, fontSize: 20.0),
+          ),
+          divider30,
           MasonryGridView.count(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
@@ -367,9 +373,21 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "Artwork",
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0,),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0,),
+                              color: Colors.blue,
+                            ),
+                            child: const Text(
+                              "Artwork",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12.0,
+                              ),
+                            ),
                           ),
+                          divider6,
                           Text(
                             "Lorem ipsum dolor",
                             style: TextStyle(

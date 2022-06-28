@@ -10,7 +10,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery
+        .of(context)
+        .size
+        .width;
 
     return SingleChildScrollView(
       child: Column(
@@ -122,7 +125,7 @@ class HomePage extends StatelessWidget {
                           TextButton(
                             style: TextButton.styleFrom(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 22.0),
+                              const EdgeInsets.symmetric(horizontal: 22.0),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(6.0),
                                 side: const BorderSide(
@@ -138,7 +141,7 @@ class HomePage extends StatelessWidget {
                           TextButton(
                             style: TextButton.styleFrom(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 22.0),
+                              const EdgeInsets.symmetric(horizontal: 22.0),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(6.0),
                                 side: const BorderSide(
@@ -285,7 +288,7 @@ class HomePage extends StatelessWidget {
                         children: [
                           Container(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 6.0),
+                            const EdgeInsets.symmetric(horizontal: 6.0),
                             decoration: BoxDecoration(
                               color: Colors.black.withOpacity(0.8),
                               borderRadius: BorderRadius.circular(3.0),
@@ -313,7 +316,7 @@ class HomePage extends StatelessWidget {
                             onPressed: () {},
                             child: Container(
                               margin:
-                                  const EdgeInsets.symmetric(horizontal: 7.0),
+                              const EdgeInsets.symmetric(horizontal: 7.0),
                               child: const Text(
                                 "Reproducir video",
                               ),
@@ -327,75 +330,23 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          StaggeredGrid.count(
+
+          MasonryGridView.count(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
             crossAxisCount: 2,
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
-            children: [
-              StaggeredGridTile.count(
-                  crossAxisCellCount: 2,
-                  mainAxisCellCount: 1,
-                  child: Container(
-                    color: Colors.red,
-                  )),
-              StaggeredGridTile.count(
-                  crossAxisCellCount: 1,
-                  mainAxisCellCount: 1,
-                  child: Container(
-                    color: Colors.indigo,
-                  )),
-              StaggeredGridTile.count(
-                  crossAxisCellCount: 2,
-                  mainAxisCellCount: 2,
-                  child: Container(
-                    color: Colors.indigo,
-                  )),
-              // Container(
-              //   color: Colors.red,
-              //   width: 200,
-              //   height: 300,
-              // ),
-              // Container(
-              //   color: Colors.blue,
-              //   width: 200,
-              //   height: 200,
-              // ),
-              // Container(
-              //   color: Colors.yellow,
-              //   width: 200,
-              //   height: 200,
-              // ),
-              // Container(
-              //   color: Colors.indigo,
-              //   width: 200,
-              //   height: 200,
-              // ),
-            ],
+            itemCount: 20,
+            itemBuilder: (context, index) {
+              return Container(
+                color: Colors.green,
+                height: (index % 3 + 2) * 100
+              );
+            },
           ),
-          const SizedBox(
-            height: 30,
-          ),
-          GridView.custom(
-            shrinkWrap: true,
-            gridDelegate: SliverQuiltedGridDelegate(
-              crossAxisCount: 4,
-              mainAxisSpacing: 4,
-              crossAxisSpacing: 4,
-              repeatPattern: QuiltedGridRepeatPattern.inverted,
-              pattern: [
-                QuiltedGridTile(2, 4),
-                QuiltedGridTile(1, 1),
-                QuiltedGridTile(1, 1),
-                QuiltedGridTile(1, 2),
-              ],
-            ),
-            childrenDelegate: SliverChildBuilderDelegate(
-              childCount: 7,
-              (context, index) => Container(
-                color: Colors.indigo,
-              ),
-            ),
-          ),
+
+
           divider40,
           divider40,
         ],

@@ -10,10 +10,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery
-        .of(context)
-        .size
-        .width;
+    double width = MediaQuery.of(context).size.width;
 
     return SingleChildScrollView(
       child: Column(
@@ -125,7 +122,7 @@ class HomePage extends StatelessWidget {
                           TextButton(
                             style: TextButton.styleFrom(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 22.0),
+                                  const EdgeInsets.symmetric(horizontal: 22.0),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(6.0),
                                 side: const BorderSide(
@@ -141,7 +138,7 @@ class HomePage extends StatelessWidget {
                           TextButton(
                             style: TextButton.styleFrom(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 22.0),
+                                  const EdgeInsets.symmetric(horizontal: 22.0),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(6.0),
                                 side: const BorderSide(
@@ -288,7 +285,7 @@ class HomePage extends StatelessWidget {
                         children: [
                           Container(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 6.0),
+                                const EdgeInsets.symmetric(horizontal: 6.0),
                             decoration: BoxDecoration(
                               color: Colors.black.withOpacity(0.8),
                               borderRadius: BorderRadius.circular(3.0),
@@ -316,7 +313,7 @@ class HomePage extends StatelessWidget {
                             onPressed: () {},
                             child: Container(
                               margin:
-                              const EdgeInsets.symmetric(horizontal: 7.0),
+                                  const EdgeInsets.symmetric(horizontal: 7.0),
                               child: const Text(
                                 "Reproducir video",
                               ),
@@ -330,9 +327,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-
           divider30,
-
           MasonryGridView.count(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
@@ -345,22 +340,59 @@ class HomePage extends StatelessWidget {
                 height: (index % 3 + 2) * 100,
                 margin: const EdgeInsets.all(4.0),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(14.0,),
-                  image: DecorationImage(
-                    image: NetworkImage(imagesDummy[index]),
-                    fit: BoxFit.cover
+                  borderRadius: BorderRadius.circular(
+                    14.0,
                   ),
+                  image: DecorationImage(
+                      image: NetworkImage(imagesDummy[index]),
+                      fit: BoxFit.cover),
                 ),
                 child: Stack(
                   children: [
-
+                    Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.center,
+                          colors: [
+                            kBrandPrimaryColor.withOpacity(0.7),
+                            kBrandPrimaryColor.withOpacity(0.05),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Artwork",
+                          ),
+                          Text(
+                            "Lorem ipsum dolor",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            "234 items",
+                            style: TextStyle(
+                              fontSize: 12.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               );
             },
           ),
-
-
           divider40,
           divider40,
         ],

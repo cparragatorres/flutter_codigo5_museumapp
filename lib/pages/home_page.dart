@@ -374,9 +374,14 @@ class HomePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0,),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 6.0,
+                              vertical: 2.0,
+                            ),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8.0,),
+                              borderRadius: BorderRadius.circular(
+                                8.0,
+                              ),
                               color: Colors.blue,
                             ),
                             child: const Text(
@@ -410,6 +415,54 @@ class HomePage extends StatelessWidget {
                 ),
               );
             },
+          ),
+          divider20,
+          const Text(
+            "Explorar Museos",
+            style: TextStyle(color: Colors.white, fontSize: 20.0),
+          ),
+          divider12,
+          const Text(
+            "¿Qué quieres visitar hoy?",
+            style: TextStyle(color: Colors.white54, fontSize: 14.0),
+          ),
+          divider12,
+          Row(
+            children: [
+              Container(
+                child: Column(
+                  children: [
+                    Container(
+                      height: 170,
+                      width: 170,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(
+                            "https://images.pexels.com/photos/11289040/pexels-photo-11289040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                          ),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "EXPLORAR",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12.0,
+                      ),
+                    ),
+                    Text(
+                      "Barjeel Art Foundation sdsd sdsd asdasds ",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14.0,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
           divider40,
           divider40,

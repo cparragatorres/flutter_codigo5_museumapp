@@ -32,7 +32,9 @@ class _InitPageState extends State<InitPage> {
         ),
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+
+          },
           icon: const Icon(
             Icons.search,
           ),

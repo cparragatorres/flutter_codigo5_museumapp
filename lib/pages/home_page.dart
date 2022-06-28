@@ -251,7 +251,7 @@ class HomePage extends StatelessWidget {
                 const Text(
                   "El festival cultural",
                   style: TextStyle(
-                    fontSize: 22.0,
+                    fontSize: 24.0,
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                   ),
@@ -266,15 +266,34 @@ class HomePage extends StatelessWidget {
                 ),
                 Container(
                   height: 220,
-                  margin: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 26.0),
+                  width: double.infinity,
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 20.0, horizontal: 26.0),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12.0),
-                      image: const DecorationImage(
+                    borderRadius: BorderRadius.circular(12.0),
+                    image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/El_nacimiento_de_Venus%2C_por_Sandro_Botticelli.jpg/1200px-El_nacimiento_de_Venus%2C_por_Sandro_Botticelli.jpg",
                       ),
                     ),
+                  ),
+                  alignment: Alignment.center,
+                  child: Stack(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "La primera presentación de la noche",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ],

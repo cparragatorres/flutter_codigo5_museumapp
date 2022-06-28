@@ -7,7 +7,14 @@ class ExplorerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    print(ResponsiveUI.of(context).hp(10));
+
     ResponsiveUI _responsive = ResponsiveUI(context);
+    print(_responsive.wp(10));
+    print(_responsive.hp(3));
+
+    print(ResponsiveUI.pWidth(context, 0.5));
+    print(ResponsiveUI.pHeight(context, 0.3));
 
 
     return SingleChildScrollView(

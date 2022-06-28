@@ -282,13 +282,34 @@ class HomePage extends StatelessWidget {
                   child: Stack(
                     children: [
                       Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(
+                          const Text(
                             "La primera presentación de la noche",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 18.0,
+                            ),
+                          ),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.black.withOpacity(0.3),
+                              elevation: 0,
+                              side: const BorderSide(
+                                color: Colors.black87,
+                                width: 1.8,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(6.0),
+                              ),
+                            ),
+                            onPressed: () {},
+
+                            child: Container(
+                              margin: const EdgeInsets.symmetric(horizontal: 7.0),
+                              child: const Text(
+                                "Reproducir video",
+                              ),
                             ),
                           ),
                         ],

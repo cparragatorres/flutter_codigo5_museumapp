@@ -337,18 +337,25 @@ class HomePage extends StatelessWidget {
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             crossAxisCount: 2,
-            mainAxisSpacing: 4,
-            crossAxisSpacing: 4,
+            // mainAxisSpacing: 4,
+            // crossAxisSpacing: 4,
             itemCount: imagesDummy.length,
             itemBuilder: (context, index) {
               return Container(
+                height: (index % 3 + 2) * 100,
+                margin: const EdgeInsets.all(4.0),
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(14.0,),
                   image: DecorationImage(
                     image: NetworkImage(imagesDummy[index]),
                     fit: BoxFit.cover
                   ),
                 ),
-                height: (index % 3 + 2) * 100
+                child: Stack(
+                  children: [
+
+                  ],
+                ),
               );
             },
           ),

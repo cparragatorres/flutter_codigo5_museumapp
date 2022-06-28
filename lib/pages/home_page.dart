@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_museumapp/helpers/data/data_dummy.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
+import 'package:flutter_codigo5_museumapp/ui/widgets/item_slider_2_widget.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -426,83 +427,21 @@ class HomePage extends StatelessWidget {
             "¿Qué quieres visitar hoy?",
             style: TextStyle(color: Colors.white54, fontSize: 14.0),
           ),
-          divider12,
-          Row(
-            children: [
-              Container(
-                width: 170,
-                child: Column(
-                  children: [
-                    Stack(
-                      clipBehavior: Clip.none,
-                      children: [
-                        Container(
-                          height: 170,
-                          width: 170,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                "https://images.pexels.com/photos/11289040/pexels-photo-11289040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned.fill(
-                          bottom: -20,
-                          child: Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Container(
-                              padding: const EdgeInsets.all(7.0,),
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                shape: BoxShape.circle
-                              ),
-                              child: Icon(
-                                Icons.person,
-                                color: Color(0xffD6A527),
-                                size: 32,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    divider30,
-                    Text(
-                      "EXPLORAR",
-                      style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: 12.0,
-                      ),
-                    ),
-                    divider6,
-                    Text(
-                      "Barjeel Art Foundation sdsd sdsd asdasds asdasd ",
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14.0,
-                      ),
-                    ),
-                    divider6,
-                    Text(
-                      "United Arab Emirates asdasdsad asdsadasd",
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: 12.0,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+          divider30,
+          SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                ItemSlider2Widget(),
+                ItemSlider2Widget(),
+                ItemSlider2Widget(),
+                ItemSlider2Widget(),
+                ItemSlider2Widget(),
+                ItemSlider2Widget(),
+              ],
+            ),
           ),
           divider40,
           divider40,

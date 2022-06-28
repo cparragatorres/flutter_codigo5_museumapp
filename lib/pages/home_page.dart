@@ -430,6 +430,7 @@ class HomePage extends StatelessWidget {
           Row(
             children: [
               Container(
+                width: 170,
                 child: Column(
                   children: [
                     Container(
@@ -445,18 +446,34 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    divider30,
                     Text(
                       "EXPLORAR",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.white70,
                         fontSize: 12.0,
                       ),
                     ),
+                    divider6,
                     Text(
-                      "Barjeel Art Foundation sdsd sdsd asdasds ",
+                      "Barjeel Art Foundation sdsd sdsd asdasds asdasd ",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14.0,
+                      ),
+                    ),
+                    divider6,
+                    Text(
+                      "United Arab Emirates asdasdsad asdsadasd",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 12.0,
                       ),
                     ),
                   ],

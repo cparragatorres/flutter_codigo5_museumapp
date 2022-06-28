@@ -433,18 +433,41 @@ class HomePage extends StatelessWidget {
                 width: 170,
                 child: Column(
                   children: [
-                    Container(
-                      height: 170,
-                      width: 170,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                            "https://images.pexels.com/photos/11289040/pexels-photo-11289040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        Container(
+                          height: 170,
+                          width: 170,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                "https://images.pexels.com/photos/11289040/pexels-photo-11289040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        Positioned.fill(
+                          bottom: -20,
+                          child: Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Container(
+                              padding: const EdgeInsets.all(7.0,),
+                              decoration: BoxDecoration(
+                                color: Colors.black,
+                                shape: BoxShape.circle
+                              ),
+                              child: Icon(
+                                Icons.person,
+                                color: Color(0xffD6A527),
+                                size: 32,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     divider30,
                     Text(

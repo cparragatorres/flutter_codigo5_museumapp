@@ -327,33 +327,29 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-
           StaggeredGrid.count(
             crossAxisCount: 2,
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
             children: [
               StaggeredGridTile.count(
-                crossAxisCellCount: 2,
-                mainAxisCellCount: 1,
-                child: Container(
-                  color: Colors.red,
-                )
-              ),
+                  crossAxisCellCount: 2,
+                  mainAxisCellCount: 1,
+                  child: Container(
+                    color: Colors.red,
+                  )),
               StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Container(
-                  color: Colors.indigo,
-                )
-              ),
+                  crossAxisCellCount: 1,
+                  mainAxisCellCount: 1,
+                  child: Container(
+                    color: Colors.indigo,
+                  )),
               StaggeredGridTile.count(
                   crossAxisCellCount: 2,
                   mainAxisCellCount: 2,
                   child: Container(
                     color: Colors.indigo,
-                  )
-              ),
+                  )),
               // Container(
               //   color: Colors.red,
               //   width: 200,
@@ -376,8 +372,30 @@ class HomePage extends StatelessWidget {
               // ),
             ],
           ),
-
-
+          const SizedBox(
+            height: 30,
+          ),
+          GridView.custom(
+            shrinkWrap: true,
+            gridDelegate: SliverQuiltedGridDelegate(
+              crossAxisCount: 4,
+              mainAxisSpacing: 4,
+              crossAxisSpacing: 4,
+              repeatPattern: QuiltedGridRepeatPattern.inverted,
+              pattern: [
+                QuiltedGridTile(2, 4),
+                QuiltedGridTile(1, 1),
+                QuiltedGridTile(1, 1),
+                QuiltedGridTile(1, 2),
+              ],
+            ),
+            childrenDelegate: SliverChildBuilderDelegate(
+              childCount: 7,
+              (context, index) => Container(
+                color: Colors.indigo,
+              ),
+            ),
+          ),
           divider40,
           divider40,
         ],

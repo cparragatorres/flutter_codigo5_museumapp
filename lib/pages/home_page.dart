@@ -331,16 +331,23 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
+          divider30,
+
           MasonryGridView.count(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             crossAxisCount: 2,
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
-            itemCount: 20,
+            itemCount: imagesDummy.length,
             itemBuilder: (context, index) {
               return Container(
-                color: Colors.green,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(imagesDummy[index]),
+                    fit: BoxFit.cover
+                  ),
+                ),
                 height: (index % 3 + 2) * 100
               );
             },

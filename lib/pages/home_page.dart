@@ -3,8 +3,7 @@ import 'package:flutter_codigo5_museumapp/helpers/data/data_dummy.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
-
-import '../ui/widgets/item_slider_1_widget.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -285,7 +284,8 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 6.0),
                             decoration: BoxDecoration(
                               color: Colors.black.withOpacity(0.8),
                               borderRadius: BorderRadius.circular(3.0),
@@ -311,9 +311,9 @@ class HomePage extends StatelessWidget {
                               ),
                             ),
                             onPressed: () {},
-
                             child: Container(
-                              margin: const EdgeInsets.symmetric(horizontal: 7.0),
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 7.0),
                               child: const Text(
                                 "Reproducir video",
                               ),
@@ -327,6 +327,57 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
+
+          StaggeredGrid.count(
+            crossAxisCount: 2,
+            mainAxisSpacing: 4,
+            crossAxisSpacing: 4,
+            children: [
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 1,
+                child: Container(
+                  color: Colors.red,
+                )
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Container(
+                  color: Colors.indigo,
+                )
+              ),
+              StaggeredGridTile.count(
+                  crossAxisCellCount: 2,
+                  mainAxisCellCount: 2,
+                  child: Container(
+                    color: Colors.indigo,
+                  )
+              ),
+              // Container(
+              //   color: Colors.red,
+              //   width: 200,
+              //   height: 300,
+              // ),
+              // Container(
+              //   color: Colors.blue,
+              //   width: 200,
+              //   height: 200,
+              // ),
+              // Container(
+              //   color: Colors.yellow,
+              //   width: 200,
+              //   height: 200,
+              // ),
+              // Container(
+              //   color: Colors.indigo,
+              //   width: 200,
+              //   height: 200,
+              // ),
+            ],
+          ),
+
+
           divider40,
           divider40,
         ],

@@ -62,8 +62,48 @@ class ArtistPage extends StatelessWidget {
           },
           body: TabBarView(
             children: [
-              Container(),
-              Container(),
+              GridView.count(
+                crossAxisCount: 3,
+                mainAxisSpacing: 6.0,
+                crossAxisSpacing: 6.0,
+                children: [
+                  Container(
+                    color: Colors.indigo,
+                  ),
+                  Container(
+                    color: Colors.red,
+                  ),
+                  Container(
+                    color: Colors.green,
+                  ),
+                ],
+              ),
+              GridView(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+
+                ),
+                children: [
+                  Container(
+                    color: Colors.indigo,
+                  ),
+                  Container(
+                    color: Colors.red,
+                  ),
+                  Container(
+                    color: Colors.green,
+                  ),
+                  Container(
+                    color: Colors.indigo,
+                  ),
+                  Container(
+                    color: Colors.red,
+                  ),
+                  Container(
+                    color: Colors.green,
+                  ),
+                ],
+              ),
               Container(),
             ],
           ),

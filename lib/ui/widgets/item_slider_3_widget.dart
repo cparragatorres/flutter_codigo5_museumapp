@@ -32,13 +32,13 @@ class ItemSlider3Widget extends StatelessWidget {
         divider6,
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 15.0,
           ),
         ),
         divider6,
-        Text(
+        const Text(
           "12 999 artistas",
           style: TextStyle(
             color: Colors.white70,

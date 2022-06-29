@@ -14,7 +14,9 @@ class ArtistPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: kBrandPrimaryColor,
       appBar: PreferredSize(
-          preferredSize: const Size(double.infinity, 64.0), child: MyAppBar()),
+        preferredSize: const Size(double.infinity, 64.0),
+        child: MyAppBar(),
+      ),
       body: DefaultTabController(
         length: 3,
         initialIndex: 0,
@@ -113,7 +115,7 @@ class ArtistPage extends StatelessWidget {
                   mainAxisSpacing: 6.0,
                 ),
                 itemCount: imagesDummy.length,
-                itemBuilder: (context, index){
+                itemBuilder: (context, index) {
                   return ItemGridWidget(image: imagesDummy[index]);
                 },
               ),

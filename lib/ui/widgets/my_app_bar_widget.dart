@@ -3,12 +3,14 @@ import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 
 class MyAppBar extends StatelessWidget  {
 
+
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
       preferredSize: Size(double.infinity, 64.0),
       child: AppBar(
-        backgroundColor: kBrandPrimaryColor,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         title: const Text(
           "MuseumApp ",
           style: TextStyle(

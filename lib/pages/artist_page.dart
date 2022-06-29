@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_museumapp/helpers/data/data_dummy.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 import 'package:flutter_codigo5_museumapp/ui/widgets/my_app_bar_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -81,7 +82,6 @@ class ArtistPage extends StatelessWidget {
               GridView(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
-
                 ),
                 children: [
                   Container(
@@ -104,7 +104,24 @@ class ArtistPage extends StatelessWidget {
                   ),
                 ],
               ),
-              Container(),
+              GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 6.0,
+                  mainAxisSpacing: 6.0,
+                ),
+                itemCount: imagesDummy.length,
+                itemBuilder: (context, index){
+                  return Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(imagesDummy[index],),
+                      )
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         ),

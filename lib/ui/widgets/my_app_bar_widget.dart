@@ -37,6 +37,7 @@ class MyAppBar extends StatelessWidget  {
             width: 10.0,
           ),
         ],
+
       ),
     );
   }

@@ -27,8 +27,8 @@ class ArtistPage extends StatelessWidget {
                 backgroundColor: Colors.green,
                 leading: SizedBox(),
                 expandedHeight: 300,
-                // floating: false,
-                // pinned: true,
+                floating: false,
+                pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
                   title: Container(
                     height: 150,
@@ -39,6 +39,19 @@ class ArtistPage extends StatelessWidget {
                     ),
                   ),
                   centerTitle: true,
+                ),
+                bottom: TabBar(
+                  tabs: [
+                    Tab(
+                      text: "Home",
+                    ),
+                    Tab(
+                      text: "Home",
+                    ),
+                    Tab(
+                      text: "Home",
+                    ),
+                  ],
                 ),
               )
             ];

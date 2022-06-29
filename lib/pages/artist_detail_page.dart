@@ -3,6 +3,7 @@ import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
 import 'package:flutter_codigo5_museumapp/ui/responsive/responsive.dart';
 import 'package:flutter_codigo5_museumapp/ui/widgets/my_app_bar_widget.dart';
+import 'package:logger/logger.dart';
 
 class ArtistDetailPage extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class _ArtistDetailPageState extends State<ArtistDetailPage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: kBrandPrimaryColor,
       body: SingleChildScrollView(

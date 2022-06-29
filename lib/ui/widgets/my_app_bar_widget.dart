@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 
-class MyAppBar extends StatelessWidget {
+class MyAppBar extends StatelessWidget  {
 
   @override
   Widget build(BuildContext context) {

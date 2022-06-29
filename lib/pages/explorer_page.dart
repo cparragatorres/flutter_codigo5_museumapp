@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_museumapp/helpers/data/data_dummy.dart';
+import 'package:flutter_codigo5_museumapp/pages/artist_page.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
 import 'package:flutter_codigo5_museumapp/ui/responsive/responsive.dart';
 import 'package:flutter_codigo5_museumapp/ui/widgets/item_slider_3_widget.dart';
@@ -66,10 +67,12 @@ class ExplorerPage extends StatelessWidget {
                   ItemSlider3Widget(
                     image: "https://images.pexels.com/photos/3778355/pexels-photo-3778355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                     title: "Artistas",
+                    toPage: ArtistPage(),
                   ),
                   ItemSlider3Widget(
                     image: "https://images.pexels.com/photos/7375049/pexels-photo-7375049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                     title: "Técnicas",
+                    toPage: ArtistPage(),
                   ),
                 ],
               ),

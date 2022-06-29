@@ -1,7 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_museumapp/helpers/data/data_dummy.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
 import 'package:flutter_codigo5_museumapp/ui/responsive/responsive.dart';
+import 'package:flutter_codigo5_museumapp/ui/widgets/item_slider_3_widget.dart';
 
 class ExplorerPage extends StatelessWidget {
   const ExplorerPage({Key? key}) : super(key: key);
@@ -16,6 +18,7 @@ class ExplorerPage extends StatelessWidget {
 
     print(ResponsiveUI.pWidth(context, 0.5));
     print(ResponsiveUI.pHeight(context, 0.3));
+
 
     return SingleChildScrollView(
       child: Padding(
@@ -34,7 +37,7 @@ class ExplorerPage extends StatelessWidget {
                         margin: const EdgeInsets.only(right: 12.0),
                         width: ResponsiveUI.of(context).wp(85),
                         decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: Colors.white10,
                           borderRadius: BorderRadius.circular(12.0),
                           image: DecorationImage(
                             fit: BoxFit.cover,
@@ -47,7 +50,7 @@ class ExplorerPage extends StatelessWidget {
               ),
             ),
             divider30,
-            Text(
+            const Text(
               "Categorías",
               style: TextStyle(
                 color: Colors.white,
@@ -59,44 +62,16 @@ class ExplorerPage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: imagesDummy
-                    .map(
-                      (e) => Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 180,
-                            margin: const EdgeInsets.only(right: 12.0),
-                            width: ResponsiveUI.of(context).wp(45),
-                            decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(12.0),
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: NetworkImage(e),
-                              ),
-                            ),
-                          ),
-                          divider6,
-                          Text(
-                            "Título",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.0,
-                            ),
-                          ),
-                          divider6,
-                          Text(
-                            "12 999 artistas",
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 12.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                    .toList().reversed.toList(),
+                children: [
+                  ItemSlider3Widget(
+                    image: "https://images.pexels.com/photos/3778355/pexels-photo-3778355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    title: "Artistas",
+                  ),
+                  ItemSlider3Widget(
+                    image: "https://images.pexels.com/photos/7375049/pexels-photo-7375049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    title: "Técnicas",
+                  ),
+                ],
               ),
             ),
           ],

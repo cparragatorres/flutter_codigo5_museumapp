@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 import 'package:flutter_codigo5_museumapp/ui/widgets/my_app_bar_widget.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ArtistPage extends StatelessWidget {
   const ArtistPage({Key? key}) : super(key: key);
@@ -17,51 +18,53 @@ class ArtistPage extends StatelessWidget {
         child: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return [
+              // SliverAppBar(
+              //   expandedHeight: 200,
+              //   collapsedHeight: 150,
+              //   title: Text("AppBar 1"),
+              //   centerTitle: true,
+              // ),
               SliverAppBar(
-                expandedHeight: 200,
-                collapsedHeight: 150,
-                title: Text("AppBar 1"),
-                centerTitle: true,
-              ),
-              SliverAppBar(
-                backgroundColor: Colors.green,
+                backgroundColor: kBrandPrimaryColor,
                 leading: SizedBox(),
-                expandedHeight: 300,
+                expandedHeight: 200,
                 floating: false,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
                   title: Container(
-                    height: 150,
+                    height: 100,
                     alignment: Alignment.center,
-                    color: Colors.black,
+                    color: Colors.transparent,
                     child: Text(
-                      "Hola",
+                      "Artistas",
+                      style: GoogleFonts.dmSans(),
                     ),
                   ),
                   centerTitle: true,
                 ),
-                bottom: TabBar(
+                bottom: const TabBar(
+                  indicatorWeight: 4,
+                  indicatorColor: Colors.blueAccent,
                   tabs: [
                     Tab(
-                      text: "Home",
+                      text: "Todos",
                     ),
                     Tab(
-                      text: "Home",
+                      text: "A-Z",
                     ),
                     Tab(
-                      text: "Home",
+                      text: "Tiempo",
                     ),
                   ],
                 ),
               )
             ];
           },
-          body: Column(
+          body: TabBarView(
             children: [
-              Container(
-                color: Colors.red,
-                height: 200,
-              ),
+              Container(),
+              Container(),
+              Container(),
             ],
           ),
         ),

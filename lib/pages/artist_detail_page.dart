@@ -10,7 +10,6 @@ class ArtistDetailPage extends StatefulWidget {
 }
 
 class _ArtistDetailPageState extends State<ArtistDetailPage> {
-
   bool isExpanded = false;
 
   @override
@@ -99,7 +98,9 @@ class _ArtistDetailPageState extends State<ArtistDetailPage> {
 Durante la infancia acudió a la escuela de manera discontinua e irregular, pues sus padres le enviaron a diferentes internados. El primero de ellos en Zevenbergen en 1864, donde estudió francés y alemán. Dos años después se matriculó en la escuela secundaria HBS Koning Willem II (Tilburg) viviendo con la familia Hannik en la calle Sint Annaplein 18-19 y permaneció allí hasta que dejó los estudios de manera definitiva a los quince años. Por entonces comenzó su afición por la pintura.
                   ''',
                     maxLines: !isExpanded ? 3 : null,
-                    overflow: !isExpanded ? TextOverflow.ellipsis : TextOverflow.visible,
+                    overflow: !isExpanded
+                        ? TextOverflow.ellipsis
+                        : TextOverflow.visible,
                     style: TextStyle(
                       height: 1.4,
                       color: Colors.white,
@@ -107,9 +108,9 @@ Durante la infancia acudió a la escuela de manera discontinua e irregular, pues
                   ),
                   divider6,
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       isExpanded = !isExpanded;
-                      setState((){});
+                      setState(() {});
                     },
                     child: Text(
                       !isExpanded ? "Más información" : "Menos información",
@@ -118,6 +119,63 @@ Durante la infancia acudió a la escuela de manera discontinua e irregular, pues
                       ),
                     ),
                   ),
+                  divider30,
+
+                  Container(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "EXHICIÓN ONLINE",
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  fontSize: 13.0,
+                                ),
+                              ),
+                              Text(
+                                "Artista destacado",
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                ),
+                              ),
+                              Text(
+                                "Lorem ipsum dolor sit amet",
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Icon(
+                          Icons.image_rounded,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                  ),
+
+                  // AnimatedContainer(
+                  //   duration: Duration(milliseconds: 1200),
+                  //   height: 100,
+                  //   color: Colors.red,
+                  //   child: Text(
+                  //     '''Nació el 30 de marzo de 1853. Hijo de un austero y humilde pastor protestante neerlandés llamado Theodorus y de su mujer Anna Cornelia, Vincent recibió el mismo nombre que le habían puesto a un hermano que nació muerto exactamente un año antes. El 1 de mayo de 1857 nació su hermano Theo y ambos tuvieron cuatro hermanos más: Cornelius Vincent, Elisabetha Huberta, Anna Cornelia y Wilhelmina Jacoba.''',
+                  //     // overflow: TextOverflow.ellipsis,
+                  //     // maxLines: 3,
+                  //     style: TextStyle(
+                  //       color: Colors.yellow,
+                  //     ),
+                  //   ),
+                  // ),
+                  divider30,
+                  divider30,
+                  divider30,
+                  divider30,
+                  divider30,
                 ],
               ),
             ),

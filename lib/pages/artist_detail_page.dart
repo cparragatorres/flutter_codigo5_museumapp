@@ -122,6 +122,14 @@ Durante la infancia acudió a la escuela de manera discontinua e irregular, pues
                   divider30,
 
                   Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.white12,
+                        width: 1.2,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
                     child: Row(
                       children: [
                         Expanded(

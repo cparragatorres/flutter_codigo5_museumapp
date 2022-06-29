@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_museumapp/helpers/data/data_dummy.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
+import 'package:flutter_codigo5_museumapp/ui/widgets/item_artist_grid_widget.dart';
 import 'package:flutter_codigo5_museumapp/ui/widgets/my_app_bar_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -113,55 +114,7 @@ class ArtistPage extends StatelessWidget {
                 ),
                 itemCount: imagesDummy.length,
                 itemBuilder: (context, index){
-                  return Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(imagesDummy[index],),
-                      )
-                    ),
-                    child: Stack(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.center,
-                              colors: [
-                                kBrandPrimaryColor.withOpacity(0.7),
-                                kBrandPrimaryColor.withOpacity(0.05),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Lorem ipsumsd",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 13.0,
-                                ),
-                              ),
-                              Text(
-                                "234 items",
-                                style: TextStyle(
-                                  fontSize: 12.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
+                  return ItemGridWidget(image: imagesDummy[index]);
                 },
               ),
               GridView.builder(
@@ -172,56 +125,7 @@ class ArtistPage extends StatelessWidget {
                 ),
                 itemCount: imagesDummy.length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                        imagesDummy[index],
-                      ),
-                    )),
-                    child: Stack(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.center,
-                              colors: [
-                                kBrandPrimaryColor.withOpacity(0.7),
-                                kBrandPrimaryColor.withOpacity(0.05),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Lorem ipsumsd",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 13.0,
-                                ),
-                              ),
-                              Text(
-                                "234 items",
-                                style: TextStyle(
-                                  fontSize: 12.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
+                  return ItemGridWidget(image: imagesDummy[index]);
                 },
               ),
               GridView.builder(
@@ -232,56 +136,7 @@ class ArtistPage extends StatelessWidget {
                 ),
                 itemCount: imagesDummy.length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                            imagesDummy[index],
-                          ),
-                        )),
-                    child: Stack(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.center,
-                              colors: [
-                                kBrandPrimaryColor.withOpacity(0.7),
-                                kBrandPrimaryColor.withOpacity(0.05),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Lorem ipsumsd",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 13.0,
-                                ),
-                              ),
-                              Text(
-                                "234 items",
-                                style: TextStyle(
-                                  fontSize: 12.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
+                  return ItemGridWidget(image: imagesDummy[index]);
                 },
               ),
             ],

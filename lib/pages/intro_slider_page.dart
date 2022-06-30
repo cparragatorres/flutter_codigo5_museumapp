@@ -10,7 +10,6 @@ class IntroSliderPage extends StatefulWidget {
 }
 
 class _IntroSliderPageState extends State<IntroSliderPage> {
-
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
 
@@ -23,16 +22,19 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
     // });
 
     Timer.periodic(
-      Duration(seconds: 5),
+      const Duration(seconds: 5),
       (timer) {
-        _currentPage++;
-        _pageController.animateToPage(
-          _currentPage,
-          duration: const Duration(
-            milliseconds: 400,
-          ),
-          curve: Curves.easeIn,
-        );
+        print(_currentPage);
+        if (_currentPage < 4) {
+          _currentPage++;
+          _pageController.animateToPage(
+            _currentPage,
+            duration: const Duration(
+              milliseconds: 400,
+            ),
+            curve: Curves.easeIn,
+          );
+        }
       },
     );
   }
@@ -69,10 +71,54 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
               ],
             ),
           ),
-          ElevatedButton(
-            onPressed: () {
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                height: 18.0,
+                width: 18.0,
+                decoration: BoxDecoration(
+                  color: Colors.black26,
+                  shape: BoxShape.circle,
+                ),
+              ),
+              Container(
+                height: 18.0,
+                width: 18.0,
+                decoration: BoxDecoration(
+                  color: Colors.black26,
+                  shape: BoxShape.circle,
+                ),
+              ),
+              Container(
+                height: 18.0,
+                width: 18.0,
+                decoration: BoxDecoration(
+                  color: Colors.black26,
+                  shape: BoxShape.circle,
+                ),
+              ),
+              Container(
+                height: 18.0,
+                width: 18.0,
+                decoration: BoxDecoration(
+                  color: Colors.black26,
+                  shape: BoxShape.circle,
+                ),
+              ),
+              Container(
+                height: 18.0,
+                width: 18.0,
+                decoration: BoxDecoration(
+                  color: Colors.black26,
+                  shape: BoxShape.circle,
+                ),
+              ),
 
-            },
+            ],
+          ),
+          ElevatedButton(
+            onPressed: () {},
             child: Text("Iniciar ahora"),
           ),
         ],

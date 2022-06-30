@@ -26,7 +26,11 @@ class _InitPageState extends State<InitPage> {
   Widget build(BuildContext context) {
 
     APIService _apiService = APIService();
-    _apiService.getMuseums();
+    _apiService.getMuseums().then((value){
+
+    }).catchError((error){
+      print("wwwww $error");
+    });
 
 
     return Scaffold(

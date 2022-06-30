@@ -7,22 +7,21 @@ import 'package:http/http.dart' as http;
 class APIService {
   Logger logger = Logger();
 
-  getMuseums() async {
+  Future getMuseums() async {
     try {
       //http://192.168.100.5:8000/API/museums/
       String _path = "http://192.168.100.5:8000/API/museums/";
-      Uri _uri = Uri.parse(_path);
+      Uri _uri = Uri.parse("");
       http.Response response = await http.get(_uri);
-      print(response.statusCode);
-      print(response.body);
+
     } on TimeoutException catch (error) {
-      logger.w(error);
+      return Future.error("Error: TimeoutException");
     } on SocketException catch (error) {
-      logger.w(error);
+      return Future.error("Error: SocketException");
     } on FormatException catch (error) {
-      logger.w(error);
+      return Future.error("Error: FormatException");
     } on Error catch (error) {
-      print("ddddddddd $error");
+      return Future.error("Error");
     }
   }
 }

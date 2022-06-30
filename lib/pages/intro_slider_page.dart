@@ -71,7 +71,8 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 26.0),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 12.0, horizontal: 26.0),
                             height: ResponsiveUI.pHeight(context, 0.38),
                             width: double.infinity,
                             decoration: const BoxDecoration(
@@ -86,30 +87,38 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 4.0),
                                       height: 8,
                                       width: 50,
                                       decoration: BoxDecoration(
                                         color: kBrandPrimaryColor,
-                                        borderRadius: BorderRadius.circular(20.0),
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
                                       ),
                                     ),
                                     Container(
-                                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 4.0),
                                       height: 8,
                                       width: 8,
                                       decoration: BoxDecoration(
-                                        color: kBrandPrimaryColor.withOpacity(0.25),
-                                        borderRadius: BorderRadius.circular(20.0),
+                                        color: kBrandPrimaryColor
+                                            .withOpacity(0.25),
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
                                       ),
                                     ),
                                     Container(
-                                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 4.0),
                                       height: 8,
                                       width: 8,
                                       decoration: BoxDecoration(
-                                        color: kBrandPrimaryColor.withOpacity(0.25),
-                                        borderRadius: BorderRadius.circular(20.0),
+                                        color: kBrandPrimaryColor
+                                            .withOpacity(0.25),
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
                                       ),
                                     ),
                                   ],
@@ -128,10 +137,46 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.w500,
-                                    color: kBrandPrimaryColor.withOpacity(0.6)
-                                  ),
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.w500,
+                                      color:
+                                          kBrandPrimaryColor.withOpacity(0.6)),
+                                ),
+                                divider30,
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Omitir"),
+                                    dividerWidth12,
+                                    Container(
+                                      padding: const EdgeInsets.all(16.0),
+                                      decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        shape: BoxShape.circle,
+                                        gradient: LinearGradient(
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                          colors: [
+                                            Color(0xfff72585),
+                                            Color(0xff480ca8),
+
+                                          ]
+                                        )
+                                      ),
+                                      child: Container(
+                                        padding: const EdgeInsets.all(2.0),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Icon(
+                                          Icons.chevron_right,
+                                          color: kBrandPrimaryColor,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),

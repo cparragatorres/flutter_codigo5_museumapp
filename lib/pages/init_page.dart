@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_museumapp/pages/explorer_page.dart';
 import 'package:flutter_codigo5_museumapp/pages/home_page.dart';
+import 'package:flutter_codigo5_museumapp/services/api_service.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 import 'package:flutter_codigo5_museumapp/ui/widgets/my_app_bar_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,6 +12,7 @@ class InitPage extends StatefulWidget {
 }
 
 class _InitPageState extends State<InitPage> {
+
   int _currentIndex = 0;
 
   List<Widget> _pages = [
@@ -22,6 +24,11 @@ class _InitPageState extends State<InitPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    APIService _apiService = APIService();
+    _apiService.getMuseums();
+
+
     return Scaffold(
       backgroundColor: kBrandPrimaryColor,
       appBar: PreferredSize(

@@ -46,6 +46,7 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kBrandPrimaryColor,
       body: Column(
         children: [
           Expanded(
@@ -78,7 +79,9 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                             decoration: const BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(80.0)),
+                                topLeft: Radius.circular(40.0),
+                                topRight: Radius.circular(40.0),
+                              ),
                             ),
                             child: Column(
                               children: [
@@ -152,18 +155,15 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                     Container(
                                       padding: const EdgeInsets.all(16.0),
                                       decoration: BoxDecoration(
-                                        color: Colors.red,
-                                        shape: BoxShape.circle,
-                                        gradient: LinearGradient(
-                                          begin: Alignment.topLeft,
-                                          end: Alignment.bottomRight,
-                                          colors: [
-                                            Color(0xfff72585),
-                                            Color(0xff480ca8),
-
-                                          ]
-                                        )
-                                      ),
+                                          color: Colors.red,
+                                          shape: BoxShape.circle,
+                                          gradient: LinearGradient(
+                                              begin: Alignment.topLeft,
+                                              end: Alignment.bottomRight,
+                                              colors: [
+                                                Color(0xfff72585),
+                                                Color(0xff480ca8),
+                                              ])),
                                       child: Container(
                                         padding: const EdgeInsets.all(2.0),
                                         decoration: BoxDecoration(
@@ -186,19 +186,260 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                     ),
                   ],
                 ),
-
-                Center(
-                  child: Text("2"),
+                Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Image.asset(
+                      "assets/images/slider3.jpeg",
+                      fit: BoxFit.cover,
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 12.0, horizontal: 26.0),
+                            height: ResponsiveUI.pHeight(context, 0.38),
+                            width: double.infinity,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(40.0),
+                                topRight: Radius.circular(40.0),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                divider20,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 4.0),
+                                      height: 8,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: kBrandPrimaryColor,
+                                        borderRadius:
+                                        BorderRadius.circular(20.0),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 4.0),
+                                      height: 8,
+                                      width: 8,
+                                      decoration: BoxDecoration(
+                                        color: kBrandPrimaryColor
+                                            .withOpacity(0.25),
+                                        borderRadius:
+                                        BorderRadius.circular(20.0),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 4.0),
+                                      height: 8,
+                                      width: 8,
+                                      decoration: BoxDecoration(
+                                        color: kBrandPrimaryColor
+                                            .withOpacity(0.25),
+                                        borderRadius:
+                                        BorderRadius.circular(20.0),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                divider20,
+                                Text(
+                                  "Lorem ipsum dolor sit amet",
+                                  style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w600,
+                                    color: kBrandPrimaryColor,
+                                  ),
+                                ),
+                                divider20,
+                                Text(
+                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.w500,
+                                      color:
+                                      kBrandPrimaryColor.withOpacity(0.6)),
+                                ),
+                                divider30,
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Omitir"),
+                                    dividerWidth12,
+                                    Container(
+                                      padding: const EdgeInsets.all(16.0),
+                                      decoration: BoxDecoration(
+                                          color: Colors.red,
+                                          shape: BoxShape.circle,
+                                          gradient: LinearGradient(
+                                              begin: Alignment.topLeft,
+                                              end: Alignment.bottomRight,
+                                              colors: [
+                                                Color(0xfff72585),
+                                                Color(0xff480ca8),
+                                              ])),
+                                      child: Container(
+                                        padding: const EdgeInsets.all(2.0),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Icon(
+                                          Icons.chevron_right,
+                                          color: kBrandPrimaryColor,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                // Center(
-                //   child: Text("3"),
-                // ),
-                // Center(
-                //   child: Text("4"),
-                // ),
-                // Center(
-                //   child: Text("5"),
-                // ),
+                Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Image.asset(
+                      "assets/images/slider3.jpeg",
+                      fit: BoxFit.cover,
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 12.0, horizontal: 26.0),
+                            height: ResponsiveUI.pHeight(context, 0.38),
+                            width: double.infinity,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(40.0),
+                                topRight: Radius.circular(40.0),
+                              ),
+                            ),
+                            child: Column(
+                              children: [
+                                divider20,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 4.0),
+                                      height: 8,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: kBrandPrimaryColor,
+                                        borderRadius:
+                                        BorderRadius.circular(20.0),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 4.0),
+                                      height: 8,
+                                      width: 8,
+                                      decoration: BoxDecoration(
+                                        color: kBrandPrimaryColor
+                                            .withOpacity(0.25),
+                                        borderRadius:
+                                        BorderRadius.circular(20.0),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 4.0),
+                                      height: 8,
+                                      width: 8,
+                                      decoration: BoxDecoration(
+                                        color: kBrandPrimaryColor
+                                            .withOpacity(0.25),
+                                        borderRadius:
+                                        BorderRadius.circular(20.0),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                divider20,
+                                Text(
+                                  "Lorem ipsum dolor sit amet",
+                                  style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w600,
+                                    color: kBrandPrimaryColor,
+                                  ),
+                                ),
+                                divider20,
+                                Text(
+                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.w500,
+                                      color:
+                                      kBrandPrimaryColor.withOpacity(0.6)),
+                                ),
+                                divider30,
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Omitir"),
+                                    dividerWidth12,
+                                    Container(
+                                      padding: const EdgeInsets.all(16.0),
+                                      decoration: BoxDecoration(
+                                          color: Colors.red,
+                                          shape: BoxShape.circle,
+                                          gradient: LinearGradient(
+                                              begin: Alignment.topLeft,
+                                              end: Alignment.bottomRight,
+                                              colors: [
+                                                Color(0xfff72585),
+                                                Color(0xff480ca8),
+                                              ])),
+                                      child: Container(
+                                        padding: const EdgeInsets.all(2.0),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Icon(
+                                          Icons.chevron_right,
+                                          color: kBrandPrimaryColor,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

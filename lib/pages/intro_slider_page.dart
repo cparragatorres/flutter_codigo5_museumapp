@@ -1,6 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
+import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
+import 'package:flutter_codigo5_museumapp/ui/responsive/responsive.dart';
 
 class IntroSliderPage extends StatefulWidget {
   const IntroSliderPage({Key? key}) : super(key: key);
@@ -21,23 +24,23 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
     //   print(_pageController.page);
     // });
 
-    Timer.periodic(
-      const Duration(seconds: 5),
-      (timer) {
-        print(_currentPage);
-        if (_currentPage < 4) {
-          _currentPage++;
-          _pageController.animateToPage(
-            _currentPage,
-            duration: const Duration(
-              milliseconds: 400,
-            ),
-            curve: Curves.easeIn,
-          );
-          setState((){});
-        }
-      },
-    );
+    // Timer.periodic(
+    //   const Duration(seconds: 5),
+    //   (timer) {
+    //     print(_currentPage);
+    //     if (_currentPage < 4) {
+    //       _currentPage++;
+    //       _pageController.animateToPage(
+    //         _currentPage,
+    //         duration: const Duration(
+    //           milliseconds: 400,
+    //         ),
+    //         curve: Curves.easeIn,
+    //       );
+    //       setState((){});
+    //     }
+    //   },
+    // );
   }
 
   @override
@@ -52,78 +55,126 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
               scrollDirection: Axis.horizontal,
               onPageChanged: (int value) {
                 _currentPage = value;
-                setState((){});
+                setState(() {});
               },
               children: [
-                Center(
-                  child: Text("1"),
+                Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Image.asset(
+                      "assets/images/slider3.jpeg",
+                      fit: BoxFit.cover,
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 26.0),
+                            height: ResponsiveUI.pHeight(context, 0.38),
+                            width: double.infinity,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(80.0)),
+                            ),
+                            child: Column(
+                              children: [
+                                divider20,
+                                Text(
+                                  "Lorem ipsum dolor sit amet",
+                                  style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w600,
+                                    color: kBrandPrimaryColor,
+                                  ),
+                                ),
+                                divider20,
+                                Text(
+                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w500,
+                                    color: kBrandPrimaryColor.withOpacity(0.6)
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
+
                 Center(
                   child: Text("2"),
                 ),
-                Center(
-                  child: Text("3"),
-                ),
-                Center(
-                  child: Text("4"),
-                ),
-                Center(
-                  child: Text("5"),
-                ),
+                // Center(
+                //   child: Text("3"),
+                // ),
+                // Center(
+                //   child: Text("4"),
+                // ),
+                // Center(
+                //   child: Text("5"),
+                // ),
               ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                height: 18.0,
-                width: 18.0,
-                decoration: BoxDecoration(
-                  color: _currentPage == 0 ? Colors.red : Colors.black26,
-                  shape: BoxShape.circle,
-                ),
-              ),
-              Container(
-                height: 18.0,
-                width: 18.0,
-                decoration: BoxDecoration(
-                  color: _currentPage == 1 ? Colors.red : Colors.black26,
-                  shape: BoxShape.circle,
-                ),
-              ),
-              Container(
-                height: 18.0,
-                width: 18.0,
-                decoration: BoxDecoration(
-                  color: _currentPage == 2 ? Colors.red : Colors.black26,
-                  shape: BoxShape.circle,
-                ),
-              ),
-              AnimatedContainer(
-                duration: Duration(milliseconds: 300),
-                height: 18.0,
-                width: _currentPage == 3 ? 40 : 18.0,
-                decoration: BoxDecoration(
-                  color: _currentPage == 3 ? Colors.red : Colors.black26,
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-              Container(
-                height: 18.0,
-                width: 18.0,
-                decoration: BoxDecoration(
-                  color: _currentPage == 4 ? Colors.red : Colors.black26,
-                  shape: BoxShape.circle,
-                ),
-              ),
-
-            ],
-          ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text("Iniciar ahora"),
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //   children: [
+          //     Container(
+          //       height: 18.0,
+          //       width: 18.0,
+          //       decoration: BoxDecoration(
+          //         color: _currentPage == 0 ? Colors.red : Colors.black26,
+          //         shape: BoxShape.circle,
+          //       ),
+          //     ),
+          //     Container(
+          //       height: 18.0,
+          //       width: 18.0,
+          //       decoration: BoxDecoration(
+          //         color: _currentPage == 1 ? Colors.red : Colors.black26,
+          //         shape: BoxShape.circle,
+          //       ),
+          //     ),
+          //     Container(
+          //       height: 18.0,
+          //       width: 18.0,
+          //       decoration: BoxDecoration(
+          //         color: _currentPage == 2 ? Colors.red : Colors.black26,
+          //         shape: BoxShape.circle,
+          //       ),
+          //     ),
+          //     AnimatedContainer(
+          //       duration: Duration(milliseconds: 300),
+          //       height: 18.0,
+          //       width: _currentPage == 3 ? 40 : 18.0,
+          //       decoration: BoxDecoration(
+          //         color: _currentPage == 3 ? Colors.red : Colors.black26,
+          //         borderRadius: BorderRadius.circular(20.0),
+          //       ),
+          //     ),
+          //     Container(
+          //       height: 18.0,
+          //       width: 18.0,
+          //       decoration: BoxDecoration(
+          //         color: _currentPage == 4 ? Colors.red : Colors.black26,
+          //         shape: BoxShape.circle,
+          //       ),
+          //     ),
+          //
+          //   ],
+          // ),
+          // ElevatedButton(
+          //   onPressed: () {},
+          //   child: Text("Iniciar ahora"),
+          // ),
         ],
       ),
     );

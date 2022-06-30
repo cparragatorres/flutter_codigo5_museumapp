@@ -7,18 +7,18 @@ final List<IntroSliderModel> introSliders = [
     id: 0,
     title: "Lorem ipsum dolor sit amet 1",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-    image: "",
+    image: "slider1.jpeg",
   ),
   IntroSliderModel(
     id: 1,
     title: "Lorem ipsum dolor sit amet 2",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-    image: "",
+    image: "slider2.jpeg",
   ),
   IntroSliderModel(
     id: 0,
     title: "Lorem ipsum dolor sit amet 3",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-    image: "",
+    image: "slider3.jpeg",
   ),
 ];

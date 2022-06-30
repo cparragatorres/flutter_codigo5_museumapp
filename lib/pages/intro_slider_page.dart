@@ -82,6 +82,39 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                             child: Column(
                               children: [
                                 divider20,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      height: 8,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: kBrandPrimaryColor,
+                                        borderRadius: BorderRadius.circular(20.0),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      height: 8,
+                                      width: 8,
+                                      decoration: BoxDecoration(
+                                        color: kBrandPrimaryColor.withOpacity(0.25),
+                                        borderRadius: BorderRadius.circular(20.0),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                                      height: 8,
+                                      width: 8,
+                                      decoration: BoxDecoration(
+                                        color: kBrandPrimaryColor.withOpacity(0.25),
+                                        borderRadius: BorderRadius.circular(20.0),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                divider20,
                                 Text(
                                   "Lorem ipsum dolor sit amet",
                                   style: TextStyle(

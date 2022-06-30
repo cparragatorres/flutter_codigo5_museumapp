@@ -100,12 +100,13 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                   shape: BoxShape.circle,
                 ),
               ),
-              Container(
+              AnimatedContainer(
+                duration: Duration(milliseconds: 300),
                 height: 18.0,
-                width: 18.0,
+                width: _currentPage == 3 ? 40 : 18.0,
                 decoration: BoxDecoration(
                   color: _currentPage == 3 ? Colors.red : Colors.black26,
-                  shape: BoxShape.circle,
+                  borderRadius: BorderRadius.circular(20.0),
                 ),
               ),
               Container(

@@ -34,6 +34,7 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
             ),
             curve: Curves.easeIn,
           );
+          setState((){});
         }
       },
     );
@@ -50,7 +51,8 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               onPageChanged: (int value) {
-                print(value);
+                _currentPage = value;
+                setState((){});
               },
               children: [
                 Center(
@@ -78,7 +80,7 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                 height: 18.0,
                 width: 18.0,
                 decoration: BoxDecoration(
-                  color: Colors.black26,
+                  color: _currentPage == 0 ? Colors.red : Colors.black26,
                   shape: BoxShape.circle,
                 ),
               ),
@@ -86,7 +88,7 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                 height: 18.0,
                 width: 18.0,
                 decoration: BoxDecoration(
-                  color: Colors.black26,
+                  color: _currentPage == 1 ? Colors.red : Colors.black26,
                   shape: BoxShape.circle,
                 ),
               ),
@@ -94,7 +96,7 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                 height: 18.0,
                 width: 18.0,
                 decoration: BoxDecoration(
-                  color: Colors.black26,
+                  color: _currentPage == 2 ? Colors.red : Colors.black26,
                   shape: BoxShape.circle,
                 ),
               ),
@@ -102,7 +104,7 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                 height: 18.0,
                 width: 18.0,
                 decoration: BoxDecoration(
-                  color: Colors.black26,
+                  color: _currentPage == 3 ? Colors.red : Colors.black26,
                   shape: BoxShape.circle,
                 ),
               ),
@@ -110,7 +112,7 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                 height: 18.0,
                 width: 18.0,
                 decoration: BoxDecoration(
-                  color: Colors.black26,
+                  color: _currentPage == 4 ? Colors.red : Colors.black26,
                   shape: BoxShape.circle,
                 ),
               ),

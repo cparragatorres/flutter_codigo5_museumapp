@@ -32,6 +32,7 @@ class APIService {
       //
       return Future.error("Error: FormatException");
     } on Error catch (error) {
+      print(error);
       return Future.error("Error");
     }
   }

@@ -18,8 +18,8 @@ class MuseumModel {
   String city;
   String country;
   String adress;
-  int latitude;
-  int longitude;
+  double latitude;
+  double longitude;
   String image;
 
   factory MuseumModel.fromJson(Map<String, dynamic> json) => MuseumModel(
@@ -29,8 +29,8 @@ class MuseumModel {
     city: json["city"],
     country: json["country"],
     adress: json["adress"],
-    latitude: json["latitude"],
-    longitude: json["longitude"],
+    latitude: json["latitude"].toDouble(),
+    longitude: json["longitude"].toDouble(),
     image: json["image"],
   );
 

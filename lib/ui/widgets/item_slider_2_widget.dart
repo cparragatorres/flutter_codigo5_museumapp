@@ -1,9 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo5_museumapp/models/museum_model.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
 
 class ItemSlider2Widget extends StatelessWidget {
-  const ItemSlider2Widget({Key? key}) : super(key: key);
+
+  MuseumModel museumModel;
+
+  ItemSlider2Widget({required this.museumModel});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class ItemSlider2Widget extends StatelessWidget {
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage(
-                      "https://images.pexels.com/photos/11289040/pexels-photo-11289040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                      museumModel.image,
                     ),
                   ),
                 ),
@@ -58,7 +62,7 @@ class ItemSlider2Widget extends StatelessWidget {
           ),
           divider6,
           Text(
-            "Barjeel Art Foundation sdsd sdsd asdasds asdasd ",
+            museumModel.name,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
@@ -69,7 +73,7 @@ class ItemSlider2Widget extends StatelessWidget {
           ),
           divider6,
           Text(
-            "United Arab Emirates asdasdsad asdsadasd",
+            museumModel.adress,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,

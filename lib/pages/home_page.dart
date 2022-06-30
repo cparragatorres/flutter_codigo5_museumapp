@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo5_museumapp/helpers/data/data_dummy.dart';
+import 'package:flutter_codigo5_museumapp/models/museum_model.dart';
 import 'package:flutter_codigo5_museumapp/services/api_service.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
@@ -13,8 +14,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   APIService apiService = APIService();
+  List<MuseumModel> museums = [];
 
   @override
   void initState() {
@@ -23,14 +24,14 @@ class _HomePageState extends State<HomePage> {
     getData();
   }
 
-  getData(){
-    apiService.getMuseums().then((value){
-      print(value);
-    }).catchError((error){
+  getData() {
+    apiService.getMuseums().then((value) {
+      museums = value;
+      setState;
+    }).catchError((error) {
       print(error);
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -456,14 +457,13 @@ class _HomePageState extends State<HomePage> {
             physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: [
-                ItemSlider2Widget(),
-                ItemSlider2Widget(),
-                ItemSlider2Widget(),
-                ItemSlider2Widget(),
-                ItemSlider2Widget(),
-                ItemSlider2Widget(),
-              ],
+              children: museums
+                  .map<Widget>(
+                    (e) => ItemSlider2Widget(
+                      museumModel: e,
+                    ),
+                  )
+                  .toList(),
             ),
           ),
           divider40,

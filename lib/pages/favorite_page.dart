@@ -19,13 +19,13 @@ class _FavoritePageState extends State<FavoritePage> {
   List<MuseumModel> museums = [];
 
   @override
-  initState(){
+  initState() {
     super.initState();
     _getData();
   }
 
-  _getData(){
-    _apiService.getMuseums().then((value){
+  _getData() {
+    _apiService.getMuseums().then((value) {
       museums = value;
     });
   }
@@ -36,64 +36,115 @@ class _FavoritePageState extends State<FavoritePage> {
 
     pw.Document pdf = pw.Document();
 
+    // pdf.addPage(
+    //   pw.Page(
+    //     pageFormat: PdfPageFormat.a4,
+    //     build: (pw.Context context) {
+    //       // return pw.Image(
+    //       //   pw.MemoryImage(
+    //       //     imageBytes,
+    //       //   ),
+    //       // );
+    //       return pw.Table(
+    //         children: [
+    //           pw.TableRow(
+    //             children: [
+    //               pw.Row(
+    //                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+    //                 children: [
+    //                   pw.Image(
+    //                     height: 100.0,
+    //                     pw.MemoryImage(
+    //                       imageBytes,
+    //                     ),
+    //                   ),
+    //                   pw.Container(
+    //                     child: pw.Column(
+    //                       crossAxisAlignment: pw.CrossAxisAlignment.end,
+    //                       children:[
+    //                         pw.Text("Calle Los Portales 23232 - Cayma - Arequipa"),
+    //                         pw.Text("Tlf: 43432232"),
+    //                         pw.Text("E-mail: isdsd@gmail.com"),
+    //                         pw.Text("Página web: www.sdsad.com"),
+    //                       ]
+    //                     ),
+    //                   ),
+    //                 ],
+    //               ),
+    //             ],
+    //           ),
+    //           pw.TableRow(
+    //             children:[
+    //               pw.Divider(),
+    //             ],
+    //           ),
+    //           pw.TableRow(
+    //             children: [
+    //               pw.Column(
+    //                 // children: museums.map((e) => pw.Text(e.name)).toList()
+    //                 children: List.generate(60, (index) => pw.Text("wwww")),
+    //               ),
+    //             ],
+    //           ),
+    //         ],
+    //       );
+    //     },
+    //   ),
+    // );
+
     pdf.addPage(
-      pw.Page(
-        pageFormat: PdfPageFormat.a4,
-        build: (pw.Context context) {
-          // return pw.Image(
-          //   pw.MemoryImage(
-          //     imageBytes,
-          //   ),
-          // );
-          return pw.Table(
-            children: [
-              pw.TableRow(
+      pw.MultiPage(
+          pageFormat: PdfPageFormat.a4,
+          build: (pw.Context context) {
+            return [
+              pw.Table(
                 children: [
-                  pw.Row(
-                    mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                  pw.TableRow(
                     children: [
-                      pw.Image(
-                        height: 100.0,
-                        pw.MemoryImage(
-                          imageBytes,
-                        ),
+                      pw.Row(
+                        mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                        children: [
+                          pw.Image(
+                            height: 100.0,
+                            pw.MemoryImage(
+                              imageBytes,
+                            ),
+                          ),
+                          pw.Container(
+                            child: pw.Column(
+                                crossAxisAlignment: pw.CrossAxisAlignment.end,
+                                children: [
+                                  pw.Text(
+                                      "Calle Los Portales 23232 - Cayma - Arequipa"),
+                                  pw.Text("Tlf: 43432232"),
+                                  pw.Text("E-mail: isdsd@gmail.com"),
+                                  pw.Text("Página web: www.sdsad.com"),
+                                ]),
+                          ),
+                        ],
                       ),
-                      pw.Container(
-                        child: pw.Column(
-                          crossAxisAlignment: pw.CrossAxisAlignment.end,
-                          children:[
-                            pw.Text("Calle Los Portales 23232 - Cayma - Arequipa"),
-                            pw.Text("Tlf: 43432232"),
-                            pw.Text("E-mail: isdsd@gmail.com"),
-                            pw.Text("Página web: www.sdsad.com"),
-                          ]
-                        ),
-                      ),
+                    ],
+                  ),
+                  pw.TableRow(
+                    children: [
+                      pw.Divider(),
                     ],
                   ),
                 ],
               ),
-              pw.TableRow(
-                children:[
-                  pw.Divider(),
-                ],
+              pw.Table(
+                children: List.generate(
+                  300,
+                  (index) => pw.TableRow(
+                    children: [
+                      pw.Text("wwwwwwwwww"),
+                    ],
+                  ),
+                ),
               ),
-            ],
-          );
-        },
-      ),
+            ];
+          }),
     );
-
-    // pdf.addPage(
-    //   pw.MultiPage(
-    //     pageFormat: PdfPageFormat.a4,
-    //     build: (pw.Context context){
-    //       return [
-    //         pw.Text("sdsd"),
-    //       ];
-    //     }
-    //   ),
-    // );
 
     Uint8List bytes = await pdf.save();
     Directory dir = await getApplicationDocumentsDirectory();

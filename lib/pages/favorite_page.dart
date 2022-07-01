@@ -2,12 +2,34 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_codigo5_museumapp/models/museum_model.dart';
+import 'package:flutter_codigo5_museumapp/services/api_service.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:open_file/open_file.dart';
 
-class FavoritePage extends StatelessWidget {
+class FavoritePage extends StatefulWidget {
+  @override
+  State<FavoritePage> createState() => _FavoritePageState();
+}
+
+class _FavoritePageState extends State<FavoritePage> {
+  APIService _apiService = APIService();
+  List<MuseumModel> museums = [];
+
+  @override
+  initState(){
+    super.initState();
+    _getData();
+  }
+
+  _getData(){
+    _apiService.getMuseums().then((value){
+      museums = value;
+    });
+  }
+
   _generatePDF() async {
     ByteData bytesx = await rootBundle.load("assets/images/image1.png");
     Uint8List imageBytes = bytesx.buffer.asUint8List();

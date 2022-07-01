@@ -1,9 +1,10 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/colors.dart';
 import 'package:flutter_codigo5_museumapp/ui/general/general_widget.dart';
 import 'package:flutter_codigo5_museumapp/ui/responsive/responsive.dart';
+
 
 class IntroSliderPage extends StatefulWidget {
   const IntroSliderPage({Key? key}) : super(key: key);
@@ -45,6 +46,8 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       backgroundColor: kBrandPrimaryColor,
       body: Column(
@@ -56,6 +59,7 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
               scrollDirection: Axis.horizontal,
               onPageChanged: (int value) {
                 _currentPage = value;
+                print(_currentPage);
                 setState(() {});
               },
               children: [
@@ -91,9 +95,10 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                   children: [
                                     Container(
                                       margin: const EdgeInsets.symmetric(
-                                          horizontal: 4.0),
+                                        horizontal: 4.0,
+                                      ),
                                       height: 8,
-                                      width: 50,
+                                      width: _currentPage == 0 ? 50 : 8,
                                       decoration: BoxDecoration(
                                         color: kBrandPrimaryColor,
                                         borderRadius:
@@ -102,9 +107,10 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                     ),
                                     Container(
                                       margin: const EdgeInsets.symmetric(
-                                          horizontal: 4.0),
+                                        horizontal: 4.0,
+                                      ),
                                       height: 8,
-                                      width: 8,
+                                      width: _currentPage == 1 ? 50 : 8,
                                       decoration: BoxDecoration(
                                         color: kBrandPrimaryColor
                                             .withOpacity(0.25),
@@ -114,9 +120,10 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                     ),
                                     Container(
                                       margin: const EdgeInsets.symmetric(
-                                          horizontal: 4.0),
+                                        horizontal: 4.0,
+                                      ),
                                       height: 8,
-                                      width: 8,
+                                      width: _currentPage == 2 ? 50 : 8,
                                       decoration: BoxDecoration(
                                         color: kBrandPrimaryColor
                                             .withOpacity(0.25),
@@ -218,9 +225,10 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                   children: [
                                     Container(
                                       margin: const EdgeInsets.symmetric(
-                                          horizontal: 4.0),
+                                        horizontal: 4.0,
+                                      ),
                                       height: 8,
-                                      width: 50,
+                                      width: _currentPage == 0 ? 50 : 8,
                                       decoration: BoxDecoration(
                                         color: kBrandPrimaryColor,
                                         borderRadius:
@@ -229,9 +237,10 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                     ),
                                     Container(
                                       margin: const EdgeInsets.symmetric(
-                                          horizontal: 4.0),
+                                        horizontal: 4.0,
+                                      ),
                                       height: 8,
-                                      width: 8,
+                                      width: _currentPage == 1 ? 50 : 8,
                                       decoration: BoxDecoration(
                                         color: kBrandPrimaryColor
                                             .withOpacity(0.25),
@@ -241,9 +250,10 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                     ),
                                     Container(
                                       margin: const EdgeInsets.symmetric(
-                                          horizontal: 4.0),
+                                        horizontal: 4.0,
+                                      ),
                                       height: 8,
-                                      width: 8,
+                                      width: _currentPage == 2 ? 50 : 8,
                                       decoration: BoxDecoration(
                                         color: kBrandPrimaryColor
                                             .withOpacity(0.25),
@@ -345,9 +355,10 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                   children: [
                                     Container(
                                       margin: const EdgeInsets.symmetric(
-                                          horizontal: 4.0),
+                                        horizontal: 4.0,
+                                      ),
                                       height: 8,
-                                      width: 50,
+                                      width: _currentPage == 0 ? 50 : 8,
                                       decoration: BoxDecoration(
                                         color: kBrandPrimaryColor,
                                         borderRadius:
@@ -356,9 +367,10 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                     ),
                                     Container(
                                       margin: const EdgeInsets.symmetric(
-                                          horizontal: 4.0),
+                                        horizontal: 4.0,
+                                      ),
                                       height: 8,
-                                      width: 8,
+                                      width: _currentPage == 1 ? 50 : 8,
                                       decoration: BoxDecoration(
                                         color: kBrandPrimaryColor
                                             .withOpacity(0.25),
@@ -368,9 +380,10 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
                                     ),
                                     Container(
                                       margin: const EdgeInsets.symmetric(
-                                          horizontal: 4.0),
+                                        horizontal: 4.0,
+                                      ),
                                       height: 8,
-                                      width: 8,
+                                      width: _currentPage == 2 ? 50 : 8,
                                       decoration: BoxDecoration(
                                         color: kBrandPrimaryColor
                                             .withOpacity(0.25),
@@ -491,7 +504,9 @@ class _IntroSliderPageState extends State<IntroSliderPage> {
           //   ],
           // ),
           // ElevatedButton(
-          //   onPressed: () {},
+          //   onPressed: () async {
+          //
+          //   },
           //   child: Text("Iniciar ahora"),
           // ),
         ],
